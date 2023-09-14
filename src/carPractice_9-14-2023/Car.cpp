@@ -1,20 +1,20 @@
 #include "Car.h"
 
-Car::Car(std::string b, int y, int m)
+Car::Car(std::string b, int y, double m)
 {
     brand = b;
     yearMade = y;
-    mileage m;
+    mileage = m;
 }
 
 std::string Car::getBrand()
 {
-    return brand
+    return brand;
 }
 
 void Car::setBrand(std::string b)
 {
-    brand = b
+    brand = b;
 }
 
 int Car::getYear()
@@ -24,7 +24,7 @@ int Car::getYear()
 
 void Car::setYear(int y)
 {
-    yearmade y;
+    yearMade = y;
 }
 
 double Car::getMileage()
