@@ -2,12 +2,12 @@
 #include <iostream>
 #include "PE_ch3_12.h"
 
-Date::Date(int aMonth, int aDay, int aYear): month{aMonth},day{aDay},year{aYear}
+Date::Date(int aMonth, int aDay, int aYear)
 {
 
 }
 
-/*
+
 // Sets object's month to what came through as a parameter
 void Date::setMonth(int aMonth)
 {
@@ -16,7 +16,7 @@ void Date::setMonth(int aMonth)
     } else
     month = 1;
 }
-*/
+
 int Date::getMonth()
 {
     return month;
@@ -27,6 +27,10 @@ void Date::setDay(int aDay)
     day = aDay;
 }
 
+int Date::getDay()
+{
+    return day;
+}
 void Date::displayDate()
 {
     std::cout << month << "/" << day << "/" << year << std::endl;
