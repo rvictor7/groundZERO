@@ -1,13 +1,23 @@
 // Class Date that has 3 pieces of info: a month (type int), a day (type int)
 // and a year (type int)
 
-#include <string>
-
 class Date
 {
 private:
+    int month{};
+    int day{};
+    int year{};
 
 public:
-    
-    void
+    // Class constructor
+    Date(int aMonth, int aDay, int aYear);
+    int getMonth();
+    int getDay();
+    int getYear();
+
+    void setMonth(int aMonth);
+    void setDay(int aDay);
+    void setYear(int aYear);
+    void displayDate();
+
 };
