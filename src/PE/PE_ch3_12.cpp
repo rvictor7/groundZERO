@@ -2,9 +2,15 @@
 #include <iostream>
 #include "PE_ch3_12.h"
 
-Date::Date(int aMonth, int aDay, int aYear)
+Date::Date(int aMonth, int aDay, int aYear):day{aDay},year{aYear}
 {
-
+    if (aMonth < 13 && aMonth > 0)
+    {
+        month = aMonth;
+    } else
+    {
+    month = 1;
+    }
 }
 
 
@@ -13,8 +19,11 @@ void Date::setMonth(int aMonth)
 {
     if(aMonth <13 && aMonth >0)
     {
+        month = aMonth;
     } else
+    {
     month = 1;
+    }
 }
 
 int Date::getMonth()
@@ -31,6 +40,16 @@ int Date::getDay()
 {
     return day;
 }
+
+void Date::setYear(int aYear)
+{
+    year = aYear;
+}
+int Date::getYear()
+{
+    return year;
+}
+
 void Date::displayDate()
 {
     std::cout << month << "/" << day << "/" << year << std::endl;
