@@ -13,6 +13,12 @@ Classes:
 
     - Cell Class
         > Attributes
+            + Bool occupied?
+            + organism type
+
+main Function:
+    - Needs to create a 2D array with columns and rows
+        > This array will be type Cell which itself holds organism objects;
 
 Things to remember:
     - Movement and actions are kept by a variable time
