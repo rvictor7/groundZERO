@@ -48,7 +48,7 @@
 
     }
 
-
+    cout << "Failed" << endl;
 
     // Deleting Dynamically allocated objects
 

@@ -38,41 +38,94 @@ int main()
             boardName[r][c] = cell;
         }
     }
-
+/*
+// Print Board
+    for(array<Cell*, COLS> row : boardName)
     {
-        for(array<Cell*, COLS> row : boardName)
+        for(Cell* cell : row)
         {
-            for(Cell* cell : row)
-            {
-                cout << cell->getGameSymbol();
-            }
-            cout << endl;
+            cout << cell->getGameSymbol();
         }
+        cout << endl;
     }
+*/
+
 // Create Board with Ants and Doodlebugs
     // Place Doodlebugs on the board
+    int series = 105972463;
+    int series2 = 140564305;
+    int seed = 0;
+    int randNumber = 0;
     for(int d = 0; d < 5; d++)
     {
         // Create a random number
-        srand(static_cast<unsigned int>(time(0)));
-        int randNumber = 0 + rand()%399;
-        cout << "random num: " << randNumber << endl;
+            //r = 0 + rand()%2;
+            seed = series % 10;
+            series = series / 10;
+            //cout << "seed: " << seed << endl;
+            srand(static_cast<unsigned int>(time(0)));
 
-        // Check if the cell is filled
-        Cell* cellPtr;
-        cellPtr = boardName[][];
+            randNumber = seed + rand()%11;
+            //cout << "random num: " << randNumber << endl;
 
-        if(cellPtr->getOrganismType() != "Ant" || cellPtr->getOrganismType() != "Doodlebug")
-        {
-            //Doodlebug* bugPtr = new Doodlebug("Doodlebug",0);
-            //bugPtr = nullptr;
-            //delete bugPtr;
-            //cellPtr->setAll(true,"Doodlebug",bugPtr);
-            //boardName[randNumber][randNumber] = cellPtr;
-        }
+                        // Check if the cell is filled
+            Cell* cellPtr = boardName[randNumber][randNumber-2];
+            Doodlebug* bugPtr = new Doodlebug("Doodlebug",0);
+            //cout << "Failed" << endl;
+
+            if(cellPtr->getOccupied() != true)
+            {
+                cellPtr->setAll(true,"Doodlebug",bugPtr);
+            } else
+            {
+                cellPtr = boardName[randNumber-1][randNumber-1];
+                cellPtr->setAll(true,"Doodlebug",bugPtr);
+            }
 
     }
 
+    for(int d = 0; d < 20; d++)
+    {
+        // Create a random number
+            //r = 0 + rand()%2;
+            if(series2<1)
+            {
+                series2 = 1420385302;
+            }
+            seed = series2 % 10;
+            series2 = series2 / 10;
+            //cout << "seed: " << seed << endl;
+            srand(static_cast<unsigned int>(time(0)));
+
+            randNumber = seed + rand()%11;
+            cout << "random num: " << randNumber << endl;
+
+                        // Check if the cell is filled
+            Cell* cellPtr = boardName[randNumber][randNumber-3];
+            Ant* bugPtr2 = new Ant("Ant");
+
+
+            if(cellPtr->getOccupied() != true)
+            {
+                cellPtr->setAll(true,"Ant",bugPtr2);
+                cout << "can't take " << endl;
+            } else
+            {
+                cellPtr = boardName[randNumber-4][randNumber-1];
+                cellPtr->setAll(true,"Ant",bugPtr2);
+                cout << "take 2" << endl;
+            }
+    }
+
+// Print Board
+    for(array<Cell*, COLS> row : boardName)
+    {
+        for(Cell* cell : row)
+        {
+            cout << cell->getGameSymbol();
+        }
+        cout << endl;
+    }
 
     return 0;
 }
