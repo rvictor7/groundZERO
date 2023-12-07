@@ -2,7 +2,7 @@
 
 #include "Cell.h"
 
-Cell::Cell(bool occupied, string organismType, Organism* organismPtr):aOccupy{occupied}, aOrganismType{organismType}, aOrganismPtr{organismPtr}
+Cell::Cell(bool occupied, string organismType, Organism* organismPtr, string gameSymbol):aOccupy{occupied}, aOrganismType{organismType}, aOrganismPtr{organismPtr}, aGameSymbol{gameSymbol}
 {
     // Left empty
 }
@@ -20,6 +20,10 @@ Organism* Cell::getOrganismPtr()
 {
     return this->aOrganismPtr;
 }
+string Cell::getGameSymbol()
+{
+    return this->aGameSymbol;
+}
 
 // Setters
 void Cell::setOccupy(bool occupyChoice)
@@ -34,4 +38,17 @@ void Cell::setOrganismType(string typeChoice)
 void Cell::setOrganismPtr(Organism* ptrChoice)
 {
     aOrganismPtr = ptrChoice;
+}
+void Cell::setGameSymbol()
+{
+    if(aOrganismType == "Doodlebug")
+    {
+        aGameSymbol = "[X]";
+    } else if(aOrganismType == "Ant")
+    {
+        aGameSymbol = "[O]";
+    } else
+    {
+        aGameSymbol = "[ ]";
+    }
 }

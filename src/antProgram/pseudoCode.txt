@@ -6,9 +6,13 @@ Classes:
             + move()
             + breed()
     - Ant -> derived class
+        > Attributes
+            + "Ant" // for showing it is an Ant type
     - Doodlebug -> derived class
         > functions
             + starve()
+        > Attributes
+            + "Doodlebug" // shows it is a Doodlebug type
 
 
     - Cell Class

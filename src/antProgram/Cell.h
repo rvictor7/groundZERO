@@ -12,19 +12,22 @@ private:
     bool aOccupy = false;
     string aOrganismType = "";
     Organism* aOrganismPtr = nullptr;
+    string aGameSymbol = "[ ]";
 
 public:
-    explicit Cell(bool occupied, string organismType, Organism* organismPtr);
+    explicit Cell(bool occupied, string organismType, Organism* organismPtr, string gameSymbol);
 
     // Getters
     bool getOccupied();
     string getOrganismType();
     Organism* getOrganismPtr();
+    string getGameSymbol();
 
     // Setters
     void setOccupy(bool occupyChoice);
     void setOrganismType(string typeChoice);
     void setOrganismPtr(Organism* ptrChoice);
+    void setGameSymbol();
 
 };
 
