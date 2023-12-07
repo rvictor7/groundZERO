@@ -1,0 +1,20 @@
+What classes are needed?
+
+Classes:
+    - Organism -> base class
+        > functions
+            + move()
+            + breed()
+    - Ant -> derived class
+    - Doodlebug -> derived class
+        > functions
+            + starve()
+
+
+    - Cell Class
+        > Attributes
+
+Things to remember:
+    - Movement and actions are kept by a variable time
+    - Need to create an array 20x20 that holds objects of ant or doodlebug
+    - Need a random function to determine movement
