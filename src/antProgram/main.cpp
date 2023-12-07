@@ -9,14 +9,19 @@ using std::endl;
 #include <array>
 using std::array;
 
-#include "Cell.h"
-#include "Organism.h"
+#include <string>
+using std::string;
+
+//#include "Cell.h"
+//#include "Organism.h"
 
 int main()
 {
+
+
 // Variables for game board
-    const int COLS = 10;
-    const int ROWS = 10;
+    const int COLS = 20;
+    const int ROWS = 20;
 
 // Create 2D Array
     array<array<string, COLS>, ROWS> gameBoard
@@ -32,6 +37,8 @@ int main()
         "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
         "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]"
     };
+
+
     for(array<string, COLS> row : gameBoard)
     {
         for(string cell : row)
@@ -44,18 +51,23 @@ int main()
 
     array<array<string*, COLS>, ROWS> objects;
 
-    for(int i=0; i<100; i++)
+    for(int i=0; i<ROWS; i++)
     {
-        string* cell = new "[ ]";
-        objects[i] = cell;
+        for(int j=0; j<COLS; j++)
+
+        //string* cell;// = new string(" ");
+        //cout << cell << std::endl;
+        //cell & = "[ ]";
+
+        objects[i][j] = new string("[ ]");
     }
 
 
-    for(array<string, COLS> row : objects)
+    for(array<string*, COLS> row : objects)
     {
-        for(string cell : row)
+        for(auto cell : row)
         {
-            cout << cell;
+            cout << *cell;
         }
         cout << endl;
     }
