@@ -11,8 +11,9 @@ class Organism
 private:
     string aOrgType = "no type";
 public:
-    explicit Organism(string orgType);
     int randomSelection0to3();
+
+    string getOrgType() const;
 
     void move();
     virtual void breed();

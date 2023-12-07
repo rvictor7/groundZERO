@@ -12,64 +12,65 @@ using std::array;
 #include <string>
 using std::string;
 
-//#include "Cell.h"
-//#include "Organism.h"
+#include <cstdlib>
+
+#include "Cell.h"
+#include "Organism.h"
+#include "Ant.h"
+#include "Doodlebug.h"
 
 int main()
 {
-
 
 // Variables for game board
     const int COLS = 20;
     const int ROWS = 20;
 
-// Create 2D Array
-    array<array<string, COLS>, ROWS> gameBoard
-    {
-        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
-        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
-        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
-        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
-        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
-        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
-        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
-        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
-        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
-        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]"
-    };
+// Create the Board
+    array<array<Cell*, COLS>, ROWS> boardName;
+    cout << "Creating Game Board..." << endl << endl;
 
-
-    for(array<string, COLS> row : gameBoard)
+    for(int r = 0; r < ROWS; r++)
     {
-        for(string cell : row)
+        for(int c = 0; c < COLS ; c++)
         {
-            cout << cell;
+            Cell* cell = new Cell();
+            boardName[r][c] = cell;
         }
-        cout << endl;
     }
 
-
-    array<array<string*, COLS>, ROWS> objects;
-
-    for(int i=0; i<ROWS; i++)
     {
-        for(int j=0; j<COLS; j++)
-
-        //string* cell;// = new string(" ");
-        //cout << cell << std::endl;
-        //cell & = "[ ]";
-
-        objects[i][j] = new string("[ ]");
-    }
-
-
-    for(array<string*, COLS> row : objects)
-    {
-        for(auto cell : row)
+        for(array<Cell*, COLS> row : boardName)
         {
-            cout << *cell;
+            for(Cell* cell : row)
+            {
+                cout << cell->getGameSymbol();
+            }
+            cout << endl;
         }
-        cout << endl;
+    }
+// Create Board with Ants and Doodlebugs
+    // Place Doodlebugs on the board
+    for(int d = 0; d < 5; d++)
+    {
+        // Create a random number
+        srand(static_cast<unsigned int>(time(0)));
+        int randNumber = 0 + rand()%399;
+        cout << "random num: " << randNumber << endl;
+
+        // Check if the cell is filled
+        Cell* cellPtr;
+        cellPtr = boardName[][];
+
+        if(cellPtr->getOrganismType() != "Ant" || cellPtr->getOrganismType() != "Doodlebug")
+        {
+            //Doodlebug* bugPtr = new Doodlebug("Doodlebug",0);
+            //bugPtr = nullptr;
+            //delete bugPtr;
+            //cellPtr->setAll(true,"Doodlebug",bugPtr);
+            //boardName[randNumber][randNumber] = cellPtr;
+        }
+
     }
 
 

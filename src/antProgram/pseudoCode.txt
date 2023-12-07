@@ -5,6 +5,7 @@ Classes:
         > functions
             + move()
             + breed()
+            + getOrgType()
     - Ant -> derived class
         > Attributes
             + "Ant" // for showing it is an Ant type

@@ -2,11 +2,8 @@
 //
 
 #include "Organism.h"
+#include <cstdlib>
 
-Organism::Organism(string orgType): aOrgType{orgType}
-{
-    // Left Empty
-}
 
 int Organism::randomSelection0to3()
 {
@@ -30,3 +27,7 @@ void Organism::breed()
     // left empty
 }
 
+string Organism::getOrgType() const
+{
+    return this->aOrgType;
+}

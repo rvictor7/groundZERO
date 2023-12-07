@@ -16,6 +16,8 @@ private:
 
 public:
     explicit Cell(bool occupied, string organismType, Organism* organismPtr, string gameSymbol);
+    ~Cell();
+    Cell();
 
     // Getters
     bool getOccupied();
@@ -28,6 +30,7 @@ public:
     void setOrganismType(string typeChoice);
     void setOrganismPtr(Organism* ptrChoice);
     void setGameSymbol();
+    void setAll(bool occupyChoice, string typeChoice, Organism* ptrChoice);
 
 };
 

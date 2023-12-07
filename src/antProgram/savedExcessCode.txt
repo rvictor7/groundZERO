@@ -1,0 +1,72 @@
+// Create 2D Array
+    array<array<string, COLS>, ROWS> gameBoard
+    {
+        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
+        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
+        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
+        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
+        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
+        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
+        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
+        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
+        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",
+        "[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]"
+    };
+
+
+    for(array<string, COLS> row : gameBoard)
+    {
+        for(string cell : row)
+        {
+            cout << cell;
+        }
+        cout << endl;
+    }
+
+
+// Create Board with Ants and Doodlebugs
+    // Place Doodlebugs on the board
+    for(int d = 0; d < 5; d++)
+    {
+        // Create a random number
+        srand(static_cast<unsigned int>(time(0)));
+        int randNumber = 0 + rand()%399;
+        cout << "random num: " << randNumber << endl;
+
+        // Check if the cell is filled
+        Cell* cellPtr;
+        cellPtr = boardName[150][150];
+/*
+        if(cellPtr->getOrganismType() != "Ant" || cellPtr->getOrganismType() != "Doodlebug")
+        {
+            //Doodlebug* bugPtr = new Doodlebug("Doodlebug",0);
+            //bugPtr = nullptr;
+            //delete bugPtr;
+            //cellPtr->setAll(true,"Doodlebug",bugPtr);
+            //boardName[randNumber][randNumber] = cellPtr;
+        }
+
+    }
+
+
+
+    // Deleting Dynamically allocated objects
+
+    for(array<Cell*,COLS> row:boardName)
+    {
+        for(Cell* cell: row)
+        {
+            cell = nullptr;
+            delete cell;
+        }
+    }
+
+    // Print out the Game Board
+    for(array<Cell*, COLS> row : boardName)
+    {
+        for(Cell* cell : row)
+        {
+            cout << cell->getGameSymbol();
+        }
+        cout << endl;
+    }
